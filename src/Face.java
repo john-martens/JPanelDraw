@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 public class Face {
     
-    private int xPos, yPos, radius;
+    private int xPos, yPos, diameter;
     private Color color;
     boolean isHappy;
     
@@ -15,7 +15,7 @@ public class Face {
     public Face(Graphics g, int x, int y){
         xPos=x;
         yPos=y;
-        radius=100;
+        diameter=100;
         color=Color.red;
        this.g = g;
        isHappy=true;
@@ -33,46 +33,46 @@ public class Face {
     
     private void drawHead(){
         g.setColor(color);
-        g.fillOval(xPos, yPos, radius, radius);
+        g.fillOval(xPos, yPos, diameter, diameter);
         g.setColor(Color.black);
-        g.drawOval(xPos, yPos, radius, radius);
+        g.drawOval(xPos, yPos, diameter, diameter);
     }
     
     public void erase(){
         g.setColor(Color.white);
-        g.fillRect(xPos-10, yPos-10, radius + 20, radius + 20);
+        g.fillRect(xPos-10, yPos-10, diameter + 20, diameter + 20);
     }
     
     private void drawEyes(){
         g.setColor(Color.yellow);
-        g.fillOval(xPos + radius/5, yPos + radius/5, radius/4, radius/4);
-        g.fillOval(xPos + (int)(2.75 * radius/5), yPos + radius/5, radius/4, radius/4);
+        g.fillOval(xPos + diameter/5, yPos + diameter/5, diameter/4, diameter/4);
+        g.fillOval(xPos + (int)(2.75 * diameter/5), yPos + diameter/5, diameter/4, diameter/4);
         
         g.setColor(Color.black);
-        g.drawOval(xPos + radius/5, yPos + radius/5, radius/4, radius/4);
-        g.drawOval(xPos + (int)(2.75 * radius/5), yPos + radius/5, radius/4, radius/4);
+        g.drawOval(xPos + diameter/5, yPos + diameter/5, diameter/4, diameter/4);
+        g.drawOval(xPos + (int)(2.75 * diameter/5), yPos + diameter/5, diameter/4, diameter/4);
     }
     
     private void drawMouth(){
         g.setColor(Color.black);
         //flat mouth
-        g.drawLine(xPos + (int)(.3*radius), yPos + (int)(.75*radius), 
-                   xPos + (int)(.7*radius), yPos + (int)(.75*radius));
+        g.drawLine(xPos + (int)(.3*diameter), yPos + (int)(.75*diameter), 
+                   xPos + (int)(.7*diameter), yPos + (int)(.75*diameter));
         if(isHappy){
         //happy up left
-        g.drawLine(xPos + (int)(.3*radius), yPos + (int)(.75*radius), 
-                   xPos + (int)(.25*radius), yPos + (int)(.65*radius));
+        g.drawLine(xPos + (int)(.3*diameter), yPos + (int)(.75*diameter), 
+                   xPos + (int)(.25*diameter), yPos + (int)(.65*diameter));
         //happy up right
-        g.drawLine(xPos + (int)(.7*radius), yPos + (int)(.75*radius), 
-                   xPos + (int)(.75*radius), yPos + (int)(.65*radius));
+        g.drawLine(xPos + (int)(.7*diameter), yPos + (int)(.75*diameter), 
+                   xPos + (int)(.75*diameter), yPos + (int)(.65*diameter));
         }
         else{
             //sad down left
-        g.drawLine(xPos + (int)(.3*radius), yPos + (int)(.75*radius), 
-                   xPos + (int)(.25*radius), yPos + (int)(.85*radius));
+        g.drawLine(xPos + (int)(.3*diameter), yPos + (int)(.75*diameter), 
+                   xPos + (int)(.25*diameter), yPos + (int)(.85*diameter));
         //sad down right
-        g.drawLine(xPos + (int)(.7*radius), yPos + (int)(.75*radius), 
-                   xPos + (int)(.75*radius), yPos + (int)(.85*radius));
+        g.drawLine(xPos + (int)(.7*diameter), yPos + (int)(.75*diameter), 
+                   xPos + (int)(.75*diameter), yPos + (int)(.85*diameter));
         }
     }
     
@@ -82,7 +82,7 @@ public class Face {
     }
     
     public void setSize(int newSize){
-        radius = newSize;
+        diameter = newSize;
     }
     
     public void setColor(Color newColor){
