@@ -13,12 +13,13 @@ public class DiceRoller extends javax.swing.JFrame {
     /**
      * Creates new form DiceRoller
      */
-    Dice d1, d2;
+    Dice d1, d2, d3, d4;
     public DiceRoller() {
         initComponents();
-        d1 = new Dice(dpanel1.getGraphics());
-        d2 = new Dice(dpanel2.getGraphics());
-        
+        d1 = new Dice(dpanel1);
+        d2 = new Dice(dpanel2);
+        d3 = new Dice(dpanel3);
+        d4 = new Dice(dpanel4);
     }
 
     /**
@@ -34,20 +35,23 @@ public class DiceRoller extends javax.swing.JFrame {
         dpanel2 = new javax.swing.JPanel();
         btnroll = new javax.swing.JButton();
         lblTotal = new javax.swing.JLabel();
+        dpanel3 = new javax.swing.JPanel();
+        dpanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         dpanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        dpanel1.setPreferredSize(new java.awt.Dimension(150, 150));
 
         javax.swing.GroupLayout dpanel1Layout = new javax.swing.GroupLayout(dpanel1);
         dpanel1.setLayout(dpanel1Layout);
         dpanel1Layout.setHorizontalGroup(
             dpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
         dpanel1Layout.setVerticalGroup(
             dpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
 
         dpanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -56,11 +60,11 @@ public class DiceRoller extends javax.swing.JFrame {
         dpanel2.setLayout(dpanel2Layout);
         dpanel2Layout.setHorizontalGroup(
             dpanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
         dpanel2Layout.setVerticalGroup(
             dpanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
 
         btnroll.setText("Roll");
@@ -73,10 +77,40 @@ public class DiceRoller extends javax.swing.JFrame {
         lblTotal.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
         lblTotal.setText("Total: ?");
 
+        dpanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout dpanel3Layout = new javax.swing.GroupLayout(dpanel3);
+        dpanel3.setLayout(dpanel3Layout);
+        dpanel3Layout.setHorizontalGroup(
+            dpanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 66, Short.MAX_VALUE)
+        );
+        dpanel3Layout.setVerticalGroup(
+            dpanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 67, Short.MAX_VALUE)
+        );
+
+        dpanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout dpanel4Layout = new javax.swing.GroupLayout(dpanel4);
+        dpanel4.setLayout(dpanel4Layout);
+        dpanel4Layout.setHorizontalGroup(
+            dpanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        dpanel4Layout.setVerticalGroup(
+            dpanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(151, 151, 151))
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(btnroll, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -84,13 +118,13 @@ public class DiceRoller extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(dpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(dpanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(151, 151, 151))
+                .addGap(18, 18, 18)
+                .addComponent(dpanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(dpanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,12 +132,14 @@ public class DiceRoller extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(btnroll)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(dpanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dpanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dpanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dpanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dpanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTotal)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,6 +151,9 @@ public class DiceRoller extends javax.swing.JFrame {
         d2.roll();
         int total = d1.getValue() + d2.getValue();
         lblTotal.setText("Total: "+ total);
+        
+        d3.roll();
+        d4.roll();
     }//GEN-LAST:event_btnrollActionPerformed
 
     /**
@@ -156,6 +195,8 @@ public class DiceRoller extends javax.swing.JFrame {
     private javax.swing.JButton btnroll;
     private javax.swing.JPanel dpanel1;
     private javax.swing.JPanel dpanel2;
+    private javax.swing.JPanel dpanel3;
+    private javax.swing.JPanel dpanel4;
     private javax.swing.JLabel lblTotal;
     // End of variables declaration//GEN-END:variables
 }
